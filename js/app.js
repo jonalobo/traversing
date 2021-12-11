@@ -8,6 +8,8 @@ const vaciarCarrito = document.querySelector('#vaciar-carrito')
 const agregarAlCarrito = document.querySelector('.agregar-carrito')
 //Inserción html
 const cursosEnCarrito = document.querySelector('tbody')
+//Delegation para borrar del carrito el curso
+const eliminarCarrito = document.querySelector('#lista-carrito')
 
 //Arreglo donde se guardaran los cursos del carrito
 let cursosCarrito = []
@@ -52,3 +54,10 @@ function mostrarEnCarrito(curso) {
     </tr>`
     cursosEnCarrito.innerHTML += HTML
 }
+
+//Eliminar el curso del carrito
+eliminarCarrito.addEventListener('click', (e)=>{
+    if (e.target.classList.contains('borrar-curso')) {
+        e.target.parentElement.parentElement.remove()
+    }
+})
