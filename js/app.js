@@ -20,6 +20,8 @@ cargarEventosDelDOM()
 function cargarEventosDelDOM() {
     //Se aplica delegation al contenedor lista de cursos
     listaCursos.addEventListener('click', agregar )
+    //Botón vaciar carrito
+    vaciarCarrito.addEventListener('click', limpiarCarrito )
 }
 
 function agregar(e) {
@@ -61,3 +63,8 @@ eliminarCarrito.addEventListener('click', (e)=>{
         e.target.parentElement.parentElement.remove()
     }
 })
+
+//Eliminar todo el carrito con el botón vaciar carrito
+function limpiarCarrito() {
+    cursosEnCarrito.innerHTML = ''
+}
